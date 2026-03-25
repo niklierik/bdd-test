@@ -1,10 +1,15 @@
 import { expect } from "@playwright/test";
+import { join } from "node:path";
+import { cwd } from "node:process";
 import { createBdd } from "playwright-bdd";
 
 const { Given, Then, When } = createBdd();
 
 Given("I have opened the calculator", async ({ page }) => {
-  await page.goto("http://localhost:8080");
+  const calculatorPage = join(cwd(), "calculator", "index.html");
+  await page.goto(`file://${calculatorPage}`);
+
+  // await page.goto(`http://localhost:8080`);
 });
 
 When("I press 2", async ({ page }) => {
