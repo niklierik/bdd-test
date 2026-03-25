@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "preinstall": "npx playwright install"
+    "preinstall": "npx playwright install",
+    "gen-bdd": "npx bddgen",
+    "test": "npm run gen-bdd && playwright test",
+    "serve": "npx http-server -c-1 calculator"
   },
   "author": "Erik Nikli",
   "devDependencies": {
