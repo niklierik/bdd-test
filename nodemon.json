@@ -1,0 +1,8 @@
+{
+  "restartable": "rs",
+  "ignore": ["node_modules", ".git"],
+  "verbose": true,
+  "watch": ["test/"],
+  "ext": "feature ts",
+  "exec": "npx bddgen"
+}

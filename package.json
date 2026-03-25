@@ -6,13 +6,16 @@
     "preinstall": "npx playwright install chromium",
     "gen-bdd": "npx bddgen",
     "test": "npm run gen-bdd && playwright test",
+    "test:dev": "concurrently nodemon \"playwright test --ui\"",
     "serve": "http-server -c-1 calculator"
   },
   "author": "Erik Nikli",
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.5.0",
+    "concurrently": "^9.2.1",
     "http-server": "^14.1.1",
+    "nodemon": "^3.1.14",
     "playwright-bdd": "^8.5.0"
   }
 }
